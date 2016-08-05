@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint.first.name">First Name</string>
+    <string name="hint.last.name">Last Name</string>
+    <string name="text.button.enter.app">Enter App</string>
+    <string name="field_required">Required Field</string>
+    <string name="toast.user.registered">User Registered</string>
+    <string name="app_title">Little Things</string>
+    <string name="toast.back.to.exit">Press back again to Exit</string>
+    <string name="description">Description</string>
+</resources>
