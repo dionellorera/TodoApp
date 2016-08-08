@@ -8,7 +8,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/card"
         card_view:cardCornerRadius="5dp">
 
         <LinearLayout
@@ -18,7 +17,6 @@
 
             <TextView
                 android:gravity="center_vertical"
-                android:text="ddddd"
                 android:layout_weight="1"
                 android:id="@+id/tv.list.thing.to.do"
                 android:layout_marginTop="10dp"
@@ -34,7 +32,6 @@
                 android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="ettete"
                 android:textSize="11sp"/>
         </LinearLayout>
 

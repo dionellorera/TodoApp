@@ -1,10 +1,6 @@
 package com.example.dione.todoapp;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -19,7 +15,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -45,8 +40,6 @@ import com.facebook.share.widget.AppInviteDialog;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -54,30 +47,30 @@ import java.util.Random;
  * Created by dione on 05/08/2016.
  */
 public class ThingsListActivity extends AppCompatActivity implements View.OnClickListener {
-    com.example.dione.todoapp.AlarmManager alarmManager;
-    long idOfSelectedRecord = 0;
+    private com.example.dione.todoapp.AlarmManager alarmManager;
+    private long idOfSelectedRecord = 0;
     private boolean add = false;
     private int counter = 1;
-    RecyclerView thingsRecyclerView;
-    ArrayList<Thing> thingArrayList;
-    ListThingsAdapter adapter;
+    private RecyclerView thingsRecyclerView;
+    private ArrayList<Thing> thingArrayList;
+    private ListThingsAdapter adapter;
     private DatePicker pickerDate;
     private TimePicker pickerTime;
     private Paint p = new Paint();
     private View view;
     private View dialogDatePickerView;
     private View dialogTimePickerView;
-    AlertDialog.Builder alertDialog;
-    AlertDialog.Builder timePickerDialog;
-    AlertDialog.Builder datePickerDialog;
-    int edit_position;
-    int pendingIntentId = 0;
-    EditText etDescription;
-    int hour;
-    int minute;
-    int year;
-    int month;
-    int date;
+    private AlertDialog.Builder alertDialog;
+    private AlertDialog.Builder timePickerDialog;
+    private AlertDialog.Builder datePickerDialog;
+    private int edit_position;
+    private int pendingIntentId = 0;
+    private EditText etDescription;
+    private int hour;
+    private int minute;
+    private int year;
+    private int month;
+    private int date;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -103,6 +96,8 @@ public class ThingsListActivity extends AppCompatActivity implements View.OnClic
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.action_settings:
+                break;
             case R.id.action_invite_facebook_friends:
                 showFacebookInvite();
                 break;
@@ -295,6 +290,7 @@ public class ThingsListActivity extends AppCompatActivity implements View.OnClic
         });
 
         timePickerDialog.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+            @SuppressWarnings("deprecation")
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 hour = pickerTime.getCurrentHour();
@@ -366,9 +362,8 @@ public class ThingsListActivity extends AppCompatActivity implements View.OnClic
                 md.update(signature.toByteArray());
                 Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException ignored) {
 
-        } catch (NoSuchAlgorithmException e) {
         }
     }
     private void showFacebookInvite(){

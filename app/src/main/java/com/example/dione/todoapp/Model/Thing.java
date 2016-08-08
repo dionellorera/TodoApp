@@ -1,12 +1,10 @@
 package com.example.dione.todoapp.Model;
 
-import java.sql.Time;
-
 /**
  * Created by dione on 05/08/2016.
  */
 public class Thing {
-    long id;
+    private long id;
     private String toDoDescription;
     private int year;
     private int month;

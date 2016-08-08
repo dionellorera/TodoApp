@@ -1,7 +1,6 @@
 package com.example.dione.todoapp.Adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
  * Created by dione on 05/08/2016.
  */
 public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.ViewHolder> {
-    private ArrayList<Thing> thingArrayList;
+    private final ArrayList<Thing> thingArrayList;
 
     public ListThingsAdapter(ArrayList<Thing> thingArrayList){
         this.thingArrayList = thingArrayList;
@@ -47,8 +46,8 @@ public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvThingTodo;
-        private TextView tvListDate;
+        private final TextView tvThingTodo;
+        private final TextView tvListDate;
         public ViewHolder(View itemView) {
             super(itemView);
             tvThingTodo = (TextView) itemView.findViewById(R.id.tv_list_thing_to_do);

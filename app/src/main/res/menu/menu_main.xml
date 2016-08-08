@@ -10,7 +10,7 @@
 
     <item
         android:id="@+id/action_invite_facebook_friends"
-        android:orderInCategory="100"
+        android:orderInCategory="200"
         android:title="@string/invite_fb_friends"
         app:showAsAction="never" />
 </menu>

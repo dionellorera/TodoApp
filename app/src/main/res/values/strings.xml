@@ -11,4 +11,5 @@
     <string name="description">Description</string>
     <string name="facebook_app_id">602588746581437</string>
     <string name="invite_fb_friends">Invite Fb Friends</string>
+    <string name="password">Password</string>
 </resources>

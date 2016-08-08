@@ -3,11 +3,8 @@ package com.example.dione.todoapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +15,6 @@ import com.example.dione.todoapp.Entities.User;
 import com.orm.SugarContext;
 
 public class RegisterActivity extends AppCompatActivity implements AppCompatButton.OnClickListener {
-    private AppCompatButton buttonLogin;
     private EditText inputFirstName;
     private EditText inputLastName;
     private EditText inputPassword;
@@ -68,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity implements AppCompatButt
 
     //user created methods
     private void initialize(){
-        buttonLogin = (AppCompatButton) findViewById(R.id.button_login);
+        AppCompatButton buttonLogin = (AppCompatButton) findViewById(R.id.button_login);
         buttonLogin.setOnClickListener(this);
         inputFirstName = (EditText) findViewById(R.id.input_first_name);
         inputLastName = (EditText) findViewById(R.id.input_last_name);
