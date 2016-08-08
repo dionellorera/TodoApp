@@ -30,6 +30,15 @@ public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.tvThingTodo.setText(thingArrayList.get(position).getToDoDescription());
+        holder.tvListDate.setText(String.format("%d%s%d%s%d, %d%s%d",
+                    thingArrayList.get(position).getYear(),
+                    "-",
+                    thingArrayList.get(position).getMonth() + 1,
+                    "-",
+                    thingArrayList.get(position).getDate(),
+                    thingArrayList.get(position).getHour(),
+                    ":",
+                    thingArrayList.get(position).getMinute()));
     }
 
     @Override
@@ -39,9 +48,11 @@ public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvThingTodo;
+        private TextView tvListDate;
         public ViewHolder(View itemView) {
             super(itemView);
             tvThingTodo = (TextView) itemView.findViewById(R.id.tv_list_thing_to_do);
+            tvListDate = (TextView) itemView.findViewById(R.id.tv_list_date);
         }
     }
 }

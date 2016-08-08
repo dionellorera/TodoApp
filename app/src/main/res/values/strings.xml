@@ -9,4 +9,6 @@
     <string name="app_title">Little Things</string>
     <string name="toast.back.to.exit">Press back again to Exit</string>
     <string name="description">Description</string>
+    <string name="facebook_app_id">602588746581437</string>
+    <string name="invite_fb_friends">Invite Fb Friends</string>
 </resources>

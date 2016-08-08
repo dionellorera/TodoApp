@@ -11,16 +11,32 @@
         android:id="@+id/card"
         card_view:cardCornerRadius="5dp">
 
-        <TextView
-            android:text="ddddd"
-            android:id="@+id/tv.list.thing.to.do"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:text="ddddd"
+                android:layout_weight="1"
+                android:id="@+id/tv.list.thing.to.do"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/tv.list.date"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ettete"
+                android:textSize="11sp"/>
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 

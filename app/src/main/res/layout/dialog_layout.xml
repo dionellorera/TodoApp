@@ -19,4 +19,5 @@
             android:hint="@string/description"/>
 
     </android.support.design.widget.TextInputLayout>
+
 </LinearLayout>
