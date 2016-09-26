@@ -1,7 +1,9 @@
 package com.example.dione.todoapp.Adapter;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -38,6 +40,12 @@ public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.Vi
                     thingArrayList.get(position).getHour(),
                     ":",
                     thingArrayList.get(position).getMinute()));
+        holder.cardViewRow.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
     }
 
     @Override
@@ -48,10 +56,12 @@ public class ListThingsAdapter extends RecyclerView.Adapter<ListThingsAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder{
         private final TextView tvThingTodo;
         private final TextView tvListDate;
+        private final CardView cardViewRow;
         public ViewHolder(View itemView) {
             super(itemView);
             tvThingTodo = (TextView) itemView.findViewById(R.id.tv_list_thing_to_do);
             tvListDate = (TextView) itemView.findViewById(R.id.tv_list_date);
+            cardViewRow = (CardView) itemView.findViewById(R.id.cardViewRow);
         }
     }
 }
